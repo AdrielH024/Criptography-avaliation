@@ -43,7 +43,8 @@ public class Panel extends JFrame{
 		b.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				result(criptograph(t1.getText()));
+				enim = ENIGMA enim(t1.getText());
+				result(enim.CypherTxt);
 			}
 		});
 
@@ -54,7 +55,7 @@ public class Panel extends JFrame{
 	    f.show();
 	}
 	
-	public void result(String result) {
+	private void result(String result) {
 		JFrame a;
 		JLabel i;
 		a = new JFrame("panel");
@@ -73,21 +74,5 @@ public class Panel extends JFrame{
 		a.setLayout(null);
 		a.setVisible(true);
 
-	}
-
-	public static String criptograph(String T){
-		ENIGMA alg = new ENIGMA();
-		int[] CypherTxt = new int[T.length()];
-		CypherTxt = alg.Algoritm(T);
-		
-		String exit = " ";
-		for(int i=0; i < CypherTxt.length; i++) {
-			if(i>=1) {
-				exit += " ";
-			}
-			exit += (char) CypherTxt[i];
-		}
-		
-		return exit;
 	}
 }

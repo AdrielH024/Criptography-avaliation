@@ -1,7 +1,18 @@
 package Criptografia;
 
+
 public class ENIGMA {
-	public static int[] Algoritm(String Plaintext) {
+
+public static CypherTxt;
+
+public ENIGMA (String Plaintext){
+	Plaintext = Algoritm(Plaintext);
+	Plaintext = criptograph(Plaintext); 
+	CypherTxt = Plaintext;
+
+}
+
+	private int[] Algoritm(String Plaintext) {
 		final int key = 10;
 		char [] breakout = Plaintext.toCharArray();
 		int [] ascvalues = new int[breakout.length];;
@@ -17,5 +28,20 @@ public class ENIGMA {
 		}
 		
 		return ascvalues;
+	}
+
+	public String criptograph(String T){
+		int[] CypherTxt = new int[T.length()];
+		CypherTxt = alg.Algoritm(T);
+		
+		String exit = " ";
+		for(int i=0; i < CypherTxt.length; i++) {
+			if(i>=1) {
+				exit += " ";
+			}
+			exit += (char) CypherTxt[i];
+		}
+		
+		return exit;
 	}
 }
